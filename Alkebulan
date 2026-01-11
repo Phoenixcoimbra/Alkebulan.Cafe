@@ -1,0 +1,189 @@
+!DOCTYPE html
+html lang=en
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleAlkebulan Café  Specialty African Coffee & Teatitle
+    script src=httpscdn.tailwindcss.comscript
+    link href=httpsfonts.googleapis.comcss2family=Merriweatherwght@400;700&family=Interwght@300;400;600&display=swap rel=stylesheet
+    style
+        root {
+            --earth-brown #2d1e17;
+            --clay-orange #D2691E;
+            --sand-beige #f4f1ea;
+        }
+        body {
+            font-family 'Inter', sans-serif;
+            background-color var(--sand-beige);
+            color var(--earth-brown);
+        }
+        h1, h2, h3 {
+            font-family 'Merriweather', serif;
+        }
+        .hero-gradient {
+            background linear-gradient(rgba(45, 30, 23, 0.6), rgba(45, 30, 23, 0.6)), 
+                        url('httpsimages.unsplash.comphoto-1495474472287-4d71bcdd2085auto=format&fit=crop&q=80');
+            background-size cover;
+            background-position center;
+        }
+        .border-clay { border-color var(--clay-orange); }
+        .bg-clay { background-color var(--clay-orange); }
+        .text-clay { color var(--clay-orange); }
+        
+         Logo Styling 
+        .logo-img {
+            height 48px;
+            width auto;
+            object-fit contain;
+        }
+    style
+head
+body class=antialiased
+
+    !-- Navigation --
+    nav class=fixed w-full z-50 bg-[#f4f1ea]90 backdrop-blur-md border-b border-gray-200
+        div class=max-w-7xl mx-auto px-6 h-20 flex items-center justify-between
+            a href=# class=flex items-center space-x-3
+                img src=Alkebulan.png alt=Alkebulan Café Logo class=logo-img onerror=this.style.display='none'; this.nextElementSibling.style.display='block'
+                div class=text-2xl font-bold tracking-tighter text-clay hidden smblockALKEBULANdiv
+            a
+            div class=hidden mdflex space-x-8 font-medium text-sm uppercase tracking-widest
+                a href=#heritage class=hovertext-orange-700 transitionHeritagea
+                a href=#menu class=hovertext-orange-700 transitionMenua
+                a href=#events class=hovertext-orange-700 transitionEventsa
+                a href=#contact class=px-5 py-2 bg-clay text-white rounded-full hoverbg-orange-800 transitionJoin the Communitya
+            div
+        div
+    nav
+
+    !-- Hero Section --
+    header class=h-screen flex items-center justify-center text-center px-6 hero-gradient relative
+        div class=max-w-4xl
+            h1 class=text-5xl mdtext-7xl text-white mb-6The Soul of Africa, Poured in the UK.h1
+            p class=text-xl text-white90 mb-10 font-light max-w-2xl mx-auto
+                Specialty beans from our family farm in Kenya. Traditional Caxinde tea from the heart of Angola. A space for culture, connection, and craft.
+            p
+            div class=flex flex-col mdflex-row gap-4 justify-center
+                a href=#menu class=bg-clay text-white px-8 py-4 rounded-full text-lg font-semibold hoverbg-orange-700 transitionExplore the Menua
+                a href=#heritage class=bg-white10 backdrop-blur text-white border border-white30 px-8 py-4 rounded-full text-lg font-semibold hoverbg-white20 transitionOur Storya
+            div
+        div
+    header
+
+    !-- Sourcing Section --
+    section id=heritage class=py-24 px-6 max-w-7xl mx-auto
+        div class=grid mdgrid-cols-2 gap-16 items-center
+            div class=relative
+                img src=httpsimages.unsplash.comphoto-1501339847302-ac426a4a7cbbauto=format&fit=crop&q=80 alt=Coffee Farm class=rounded-2xl shadow-2xl
+                div class=absolute -bottom-8 -right-8 bg-clay p-8 rounded-2xl text-white hidden mdblock
+                    p class=text-3xl font-bold italicFrom Soil to Soulp
+                div
+            div
+            div
+                span class=text-clay font-bold tracking-widest uppercase text-smOur Rootsspan
+                h2 class=text-4xl mt-4 mb-8Direct From the Sourceh2
+                div class=space-y-6
+                    div
+                        h3 class=text-2xl mb-2The Kenyan Highlandsh3
+                        p class=text-gray-600Our coffee doesn't come from a warehouse. It comes from our family. Every bean is hand-picked on our multi-generational farm in Kenya, ensuring the highest Grade AA quality and a fair price for every harvest.p
+                    div
+                    div class=pt-6 border-t border-gray-200
+                        h3 class=text-2xl mb-2Angolan Caxindeh3
+                        p class=text-gray-600Discover the ritual of Caxinde. We source our lemongrass tea directly from artisanal growers in Angola, bringing a centuries-old tradition of wellness and hospitality to your cup.p
+                    div
+                div
+            div
+        div
+    section
+
+    !-- Menu Highlights --
+    section id=menu class=bg-[#2d1e17] text-white py-24 px-6
+        div class=max-w-7xl mx-auto
+            div class=text-center mb-16
+                h2 class=text-4xl mb-4A Taste of the Continenth2
+                p class=text-gray-400 max-w-xl mx-autoModern Afro-fusion snacks paired with the world's finest specialty beans.p
+            div
+            div class=grid mdgrid-cols-3 gap-8
+                div class=bg-white5 p-8 rounded-2xl border border-white10 hoverborder-clay50 transition group
+                    div class=h-48 rounded-xl overflow-hidden mb-6
+                        img src=httpsimages.unsplash.comphoto-1544787210-2211d247156eauto=format&fit=crop&q=80 class=w-full h-full object-cover group-hoverscale-110 transition duration-500 alt=Specialty Coffee
+                    div
+                    h3 class=text-2xl mb-2Kenya AA Arabicah3
+                    p class=text-gray-400Bright, citrus-noted coffee from our family estate. The gold standard of East African beans.p
+                    p class=mt-4 text-clay font-bold£4.20p
+                div
+                div class=bg-white5 p-8 rounded-2xl border border-white10 hoverborder-clay50 transition group
+                    div class=h-48 rounded-xl overflow-hidden mb-6
+                        img src=httpsimages.unsplash.comphoto-1576091160550-2173bdd99802auto=format&fit=crop&q=80 class=w-full h-full object-cover group-hoverscale-110 transition duration-500 alt=Lemongrass Tea
+                    div
+                    h3 class=text-2xl mb-2Angolan Caxindeh3
+                    p class=text-gray-400Pure sun-dried lemongrass. A fragrant, caffeine-free infusion of Angolan sunshine.p
+                    p class=mt-4 text-clay font-bold£3.80p
+                div
+                div class=bg-white5 p-8 rounded-2xl border border-white10 hoverborder-clay50 transition group
+                    div class=h-48 rounded-xl overflow-hidden mb-6
+                        img src=httpsimages.unsplash.comphoto-1505253149613-112d21d9f6a9auto=format&fit=crop&q=80 class=w-full h-full object-cover group-hoverscale-110 transition duration-500 alt=Mandazi
+                    div
+                    h3 class=text-2xl mb-2The Mandazi Boxh3
+                    p class=text-gray-400Cardamom-infused African doughnuts. Fluffy, spiced, and the perfect coffee companion.p
+                    p class=mt-4 text-clay font-bold£5.50p
+                div
+            div
+        div
+    section
+
+    !-- Cultural Section --
+    section id=events class=py-24 px-6 bg-white
+        div class=max-w-4xl mx-auto text-center
+            h2 class=text-4xl mb-8More Than a Café. A Hub.h2
+            p class=text-xl text-gray-600 mb-12
+                Join us for monthly poetry nights, art exhibitions from the African diaspora, and live acoustic sessions. Alkebulan is where creativity meets community.
+            p
+            div class=grid grid-cols-2 mdgrid-cols-4 gap-4
+                div class=p-4 border border-gray-100 rounded-xl bg-gray-50
+                    p class=font-bold text-clay uppercase text-xsPoetryp
+                    p class=text-smSpeak Easy Nightsp
+                div
+                div class=p-4 border border-gray-100 rounded-xl bg-gray-50
+                    p class=font-bold text-clay uppercase text-xsArtp
+                    p class=text-smRotating Galleryp
+                div
+                div class=p-4 border border-gray-100 rounded-xl bg-gray-50
+                    p class=font-bold text-clay uppercase text-xsMusicp
+                    p class=text-smAcoustic Rootsp
+                div
+                div class=p-4 border border-gray-100 rounded-xl bg-gray-50
+                    p class=font-bold text-clay uppercase text-xsCommunityp
+                    p class=text-smWorkshopsp
+                div
+            div
+        div
+    section
+
+    !-- Footer  CTA --
+    footer id=contact class=bg-clay py-20 px-6 text-white text-center
+        div class=max-w-4xl mx-auto
+            div class=flex justify-center mb-8
+                img src=Alkebulan.png alt=Alkebulan Café Logo class=h-20 w-auto brightness-0 invert opacity-90
+            div
+            h2 class=text-4xl mb-6Experience Alkebulan.h2
+            p class=text-xl mb-10 opacity-90Sign up to our newsletter to receive an invite to our grand opening and 50% off your first coffee.p
+            form class=flex flex-col mdflex-row gap-4 max-w-lg mx-auto onsubmit=event.preventDefault(); document.getElementById('success').classList.remove('hidden')
+                input type=email placeholder=Email Address class=flex-grow px-6 py-4 rounded-full text-gray-800 outline-none required
+                button class=bg-[#2d1e17] px-8 py-4 rounded-full font-bold hoverbg-black transitionStay Updatedbutton
+            form
+            div id=success class=mt-4 hidden text-sm font-bold bg-white20 p-2 roundedWelcome to the heritage! Check your inbox soon.div
+            
+            div class=mt-20 pt-10 border-t border-white20 flex flex-col mdflex-row justify-between items-center text-sm opacity-70
+                p&copy; 2024 Alkebulan Café UK. Roots in Kenya & Angola.p
+                div class=flex space-x-6 mt-4 mdmt-0
+                    a href=# class=hovertext-white transitionInstagrama
+                    a href=# class=hovertext-white transitionTikToka
+                    a href=# class=hovertext-white transitionTwittera
+                div
+            div
+        div
+    footer
+
+body
+html
