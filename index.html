@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alkebulan Café | Specialty African Coffee & Tea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --earth-brown: #2d1e17;
+            --clay-orange: #D2691E;
+            --sand-beige: #f4f1ea;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--sand-beige);
+            color: var(--earth-brown);
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(45, 30, 23, 0.6), rgba(45, 30, 23, 0.6)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .text-clay { color: var(--clay-orange); }
+        .bg-clay { background-color: var(--clay-orange); }
+        
+        /* Logo Styling */
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#f4f1ea]/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="Alkebulan.png" alt="Alkebulan Café Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                <div class="text-2xl font-bold tracking-tighter text-clay hidden sm:block">ALKEBULAN</div>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+                <a href="#heritage" class="hover:text-orange-700 transition">Heritage</a>
+                <a href="#menu" class="hover:text-orange-700 transition">Menu</a>
+                <a href="#events" class="hover:text-orange-700 transition">Events</a>
+                <a href="#contact" class="px-5 py-2 bg-clay text-white rounded-full hover:bg-orange-800 transition">Join the Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="h-screen flex items-center justify-center text-center px-6 hero-gradient relative">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-7xl text-white mb-6">The Soul of Africa, Poured in the UK.</h1>
+            <p class="text-xl text-white/90 mb-10 font-light max-w-2xl mx-auto">
+                Specialty beans from our family farm in Kenya. Traditional Caxinde tea from the heart of Angola. A space for culture, connection, and craft.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-clay text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-700 transition">Explore the Menu</a>
+                <a href="#heritage" class="bg-white/10 backdrop-blur text-white border border-white/30 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/20 transition">Our Story</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sourcing Section -->
+    <section id="heritage" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80" alt="Coffee Farm" class="rounded-2xl shadow-2xl">
+                <div class="absolute -bottom-8 -right-8 bg-clay p-8 rounded-2xl text-white hidden md:block">
+                    <p class="text-3xl font-bold italic">"From Soil to Soul"</p>
+                </div>
+            </div>
+            <div>
+                <span class="text-clay font-bold tracking-widest uppercase text-sm">Our Roots</span>
+                <h2 class="text-4xl mt-4 mb-8">Direct From the Source</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl mb-2">The Kenyan Highlands</h3>
+                        <p class="text-gray-600">Our coffee doesn't come from a warehouse. It comes from our family. Every bean is hand-picked on our multi-generational farm in Kenya, ensuring the highest Grade AA quality and a fair price for every harvest.</p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-200">
+                        <h3 class="text-2xl mb-2">Angolan Caxinde</h3>
+                        <p class="text-gray-600">Discover the ritual of Caxinde. We source our lemongrass tea directly from artisanal growers in Angola, bringing a centuries-old tradition of wellness and hospitality to your cup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="bg-[#2d1e17] text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl mb-4">A Taste of the Continent</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Modern Afro-fusion snacks paired with the world's finest specialty beans.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-clay/50 transition group">
+                    <div class="h-48 rounded-xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1544787210-2211d247156e?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Specialty Coffee">
+                    </div>
+                    <h3 class="text-2xl mb-2">Kenya AA Arabica</h3>
+                    <p class="text-gray-400">Bright, citrus-noted coffee from our family estate. The gold standard of East African beans.</p>
+                    <p class="mt-4 text-clay font-bold">£4.20</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-clay/50 transition group">
+                    <div class="h-48 rounded-xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173bdd99802?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Lemongrass Tea">
+                    </div>
+                    <h3 class="text-2xl mb-2">Angolan Caxinde</h3>
+                    <p class="text-gray-400">Pure sun-dried lemongrass. A fragrant, caffeine-free infusion of Angolan sunshine.</p>
+                    <p class="mt-4 text-clay font-bold">£3.80</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-clay/50 transition group">
+                    <div class="h-48 rounded-xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1505253149613-112d21d9f6a9?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Mandazi">
+                    </div>
+                    <h3 class="text-2xl mb-2">The Mandazi Box</h3>
+                    <p class="text-gray-400">Cardamom-infused African doughnuts. Fluffy, spiced, and the perfect coffee companion.</p>
+                    <p class="mt-4 text-clay font-bold">£5.50</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Section -->
+    <section id="events" class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl mb-8">More Than a Café. A Hub.</h2>
+            <p class="text-xl text-gray-600 mb-12">
+                Join us for monthly poetry nights, art exhibitions from the African diaspora, and live acoustic sessions. Alkebulan is where creativity meets community.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-4 border border-gray-100 rounded-xl bg-gray-50">
+                    <p class="font-bold text-clay uppercase text-xs">Poetry</p>
+                    <p class="text-sm">Speak Easy Nights</p>
+                </div>
+                <div class="p-4 border border-gray-100 rounded-xl bg-gray-50">
+                    <p class="font-bold text-clay uppercase text-xs">Art</p>
+                    <p class="text-sm">Rotating Gallery</p>
+                </div>
+                <div class="p-4 border border-gray-100 rounded-xl bg-gray-50">
+                    <p class="font-bold text-clay uppercase text-xs">Music</p>
+                    <p class="text-sm">Acoustic Roots</p>
+                </div>
+                <div class="p-4 border border-gray-100 rounded-xl bg-gray-50">
+                    <p class="font-bold text-clay uppercase text-xs">Community</p>
+                    <p class="text-sm">Workshops</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / CTA -->
+    <footer id="contact" class="bg-clay py-20 px-6 text-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-center mb-8">
+                <img src="Alkebulan.png" alt="Alkebulan Café Logo" class="h-24 w-auto brightness-0 invert opacity-90">
+            </div>
+            <h2 class="text-4xl mb-6">Experience Alkebulan.</h2>
+            <p class="text-xl mb-10 opacity-90">Sign up to our newsletter for your grand opening invite and 50% off your first coffee.</p>
+            
+            <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto" onsubmit="event.preventDefault(); document.getElementById('success').classList.remove('hidden')">
+                <input type="email" placeholder="Email Address" class="flex-grow px-6 py-4 rounded-full text-gray-800 outline-none focus:ring-2 focus:ring-brown-900" required>
+                <button class="bg-[#2d1e17] px-8 py-4 rounded-full font-bold hover:bg-black transition shadow-lg">Stay Updated</button>
+            </form>
+            <div id="success" class="mt-4 hidden text-sm font-bold bg-white/20 p-3 rounded-lg backdrop-blur">Welcome to the heritage! Check your inbox soon.</div>
+            
+            <div class="mt-20 pt-10 border-t border-white/20 flex flex-col md:flex-row justify-between items-center text-sm opacity-80">
+                <div class="text-left mb-6 md:mb-0">
+                    <p class="font-bold text-lg mb-1">www.alkebulan.cafe</p>
+                    <p>&copy; 2024 Alkebulan Café UK. Direct from Kenya & Angola.</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="https://instagram.com/alkebulan.cafe" target="_blank" class="flex items-center gap-2 hover:text-white transition group">
+                        <svg class="w-6 h-6 transition group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        <span class="font-medium">@alkebulan.cafe</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
