@@ -214,36 +214,39 @@
         const btnText = document.getElementById('btn-text');
         const successMsg = document.getElementById('success-msg');
     
-        waitlistForm.addEventListener('submit', async (e) => {
+        waitlistForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // 1. Loading State
             submitBtn.disabled = true;
             btnText.innerText = "Joining...";
     
-            // 2. Prepare Data
-            const formData = new FormData(waitlistForm);
+            // 1. Get the email value directly
+            const emailValue = document.querySelector('input[name="email"]').value;
     
-            try {
-                // 3. Send to Google (mode: 'no-cors' is the secret key here)
-                await fetch('https://script.google.com/macros/s/AKfycbzIFa-4pmo38vB5HllySQSqiLgEdfYDXibnwwsmGsrB0SibPmPXzkeY_GNgQkXnQ_I1/exec', {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'no-cors' // This stops the "Something went wrong" error
-                });
+            // 2. Build a URL-encoded string (Google's favorite format)
+            const urlEncodedData = "email=" + encodeURIComponent(emailValue);
     
-                // 4. Success UI
-                // With 'no-cors', we can't check 'response.ok', 
-                // so if the line above didn't crash, we show success.
+            // 3. Send using the "Old School" way that ignores CORS issues
+            fetch('https://script.google.com/macros/s/AKfycbxpKv7ct-jZvks-vwL_-UvFJ94XFF8iFt-DDD9xA_gUUtTw9DoruLrLB6nEqmPcuEwa/exec', {
+                method: 'POST',
+                mode: 'no-cors', 
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: urlEncodedData
+            })
+            .then(() => {
+                // Since we can't 'read' the response in no-cors, 
+                // we assume success if the fetch started.
                 waitlistForm.classList.add('hidden');
                 successMsg.classList.remove('hidden');
-    
-            } catch (err) {
+            })
+            .catch((err) => {
                 console.error(err);
-                alert("Something went wrong. Please check your connection.");
+                alert("Error joining. Please try again.");
                 submitBtn.disabled = false;
                 btnText.innerText = "Join the Waitlist";
-            }
+            });
         });
     </script>
     
