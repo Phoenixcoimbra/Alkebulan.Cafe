@@ -210,29 +210,35 @@
     
     <script>
         const waitlistForm = document.getElementById('waitlist-form');
+        // Using the URL you provided
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxpxesLIz8HPJ96c8TdUAMGnFs5NGWc09bd64_d8_HaetvXfqEsLX_vvlOh7Q-iDPZVrQ/exec';
       
         waitlistForm.addEventListener('submit', e => {
           e.preventDefault();
           
-          // 1. Manually grab the value from the input box
-          const emailValue = document.querySelector('input[name="email"]').value;
-          
-          // 2. Create the data package manually to ensure it's not empty
-          const formData = new FormData();
-          formData.append('email', emailValue);
+          // Show "Joining..." on the button
+          const btnText = document.getElementById('btn-text');
+          if (btnText) btnText.innerText = "Joining...";
       
-          fetch(scriptURL, { 
-            method: 'POST', 
-            mode: 'no-cors', // Critical for Google Scripts
-            body: formData
+          const emailValue = document.querySelector('input[name="email"]').value;
+      
+          // We append the email to the URL, exactly like the manual test: ?email=...
+          const finalURL = scriptURL + "?email=" + encodeURIComponent(emailValue);
+      
+          fetch(finalURL, { 
+            method: 'GET', // Changed from POST to GET to match your successful manual test
+            mode: 'no-cors' 
           })
           .then(() => {
-            // Show success on the UI
-            waitlistForm.classList.add('hidden');
-            document.getElementById('success-msg').classList.remove('hidden');
+            // Hide the form and show the success message
+            waitlistForm.style.display = 'none';
+            const successMsg = document.getElementById('success-msg');
+            if (successMsg) successMsg.classList.remove('hidden');
           })
-          .catch(error => console.error('Error!', error.message));
+          .catch(error => {
+            console.error('Error!', error.message);
+            alert("Submission failed. Please check your connection.");
+          });
         });
       </script>
     
