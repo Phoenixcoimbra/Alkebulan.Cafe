@@ -210,45 +210,31 @@
     
     <script>
         const waitlistForm = document.getElementById('waitlist-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        const successMsg = document.getElementById('success-msg');
-    
-        waitlistForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            submitBtn.disabled = true;
-            btnText.innerText = "Joining...";
-    
-            // 1. Get the email value directly
-            const emailValue = document.querySelector('input[name="email"]').value;
-    
-            // 2. Build a URL-encoded string (Google's favorite format)
-            const urlEncodedData = "email=" + encodeURIComponent(emailValue);
-    
-            // 3. Send using the "Old School" way that ignores CORS issues
-            fetch('https://script.google.com/macros/s/AKfycbxpxesLIz8HPJ96c8TdUAMGnFs5NGWc09bd64_d8_HaetvXfqEsLX_vvlOh7Q-iDPZVrQ/exec', {
-                method: 'POST',
-                mode: 'no-cors', 
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: urlEncodedData
-            })
-            .then(() => {
-                // Since we can't 'read' the response in no-cors, 
-                // we assume success if the fetch started.
-                waitlistForm.classList.add('hidden');
-                successMsg.classList.remove('hidden');
-            })
-            .catch((err) => {
-                console.error(err);
-                alert("Error joining. Please try again.");
-                submitBtn.disabled = false;
-                btnText.innerText = "Join the Waitlist";
-            });
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxpxesLIz8HPJ96c8TdUAMGnFs5NGWc09bd64_d8_HaetvXfqEsLX_vvlOh7Q-iDPZVrQ/exec';
+      
+        waitlistForm.addEventListener('submit', e => {
+          e.preventDefault();
+          
+          // 1. Manually grab the value from the input box
+          const emailValue = document.querySelector('input[name="email"]').value;
+          
+          // 2. Create the data package manually to ensure it's not empty
+          const formData = new FormData();
+          formData.append('email', emailValue);
+      
+          fetch(scriptURL, { 
+            method: 'POST', 
+            mode: 'no-cors', // Critical for Google Scripts
+            body: formData
+          })
+          .then(() => {
+            // Show success on the UI
+            waitlistForm.classList.add('hidden');
+            document.getElementById('success-msg').classList.remove('hidden');
+          })
+          .catch(error => console.error('Error!', error.message));
         });
-    </script>
+      </script>
     
             
             
